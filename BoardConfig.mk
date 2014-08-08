@@ -41,7 +41,7 @@ USE_CHINESE_RECOVERY := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 
-USE_CHINESE_RECOVERY := true
+//USE_CHINESE_RECOVERY := true << Blame this
 ifneq ($(USE_CHINESE_RECOVERY),true)
 BOARD_USE_CUSTOM_RECOVERY_FONT   := \"roboto_15x24.h\"
 BOARD_CUSTOM_RECOVERY_UI         := \
@@ -53,5 +53,6 @@ BOARD_CUSTOM_RECOVERY_UI         := \
 	../../$(COMMON_PATH)/recovery/dualboot_cn.c \
 	../../$(COMMON_PATH)/recovery/recovery_ui_cn.c
 endif
-
+USE_CHINESE_RECOVERY:= false
+BOARD_RECOVERY_SWIPE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
