@@ -177,13 +177,12 @@ service mpdecision /system/bin/mpdecision --avg_comp
    group system
    disabled
 
-service thermal-engine /system/bin/thermal-engine
-   user root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-   group root
-   disabled
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    seclabel u:r:thermanager:s0
+    class late_start
+    user root
+    group root
 
 service thermal-perf /system/bin/thermal-engine --config /system/etc/thermal-engine-perf.conf
    class main
@@ -290,17 +289,17 @@ service changepowermode /system/bin/changepowermode.sh
 on property:sys.perf.profile=2
     start changepowermode
     stop thermal-engine
-    start thermal-perf
+    start thermanager
 
 on property:sys.perf.profile=1
     start changepowermode
     stop thermal-perf
-    start thermal-engine
+    start thermanager
 
 on property:sys.perf.profile=0
     start changepowermode
     stop thermal-perf
-    start thermal-engine
+    start thermanager
 
 on property:persist.sys.display_prefer=0
     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 0x2

@@ -155,10 +155,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C
 
-# Thermal config
+# Thermal
+PRODUCT_PACKAGES += \
+    thermanager
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf \
-    $(LOCAL_PATH)/configs/thermal-engine-perf.conf:system/etc/thermal-engine-perf.conf
+    $(LOCAL_PATH)/thermal/thermanager.xml:system/etc/thermanager.xml
 
 # Proprietery Firmware
 PRODUCT_COPY_FILES += \
