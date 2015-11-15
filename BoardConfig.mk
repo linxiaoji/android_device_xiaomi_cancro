@@ -58,6 +58,10 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := cyanogen_cancro_defconfig
 BOARD_DTBTOOL_ARGS := -2
 
+# Kernel does not boot with gcc 4.9
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
+
+
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
