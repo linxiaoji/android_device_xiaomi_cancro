@@ -2,6 +2,7 @@
 <!-- Copyright (C) 2010 The Android Open Source Project
      Copyright (C) 2012-2013 The Linux Foundation. All rights reserved.
      Not a contribution.
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -74,6 +75,16 @@
 <!ELEMENT AudioDecoderCap EMPTY>
 <!ATTLIST AudioDecoderCap name (wma) #REQUIRED>
 <!ATTLIST AudioDecoderCap enabled (true|false) #REQUIRED>
+<!ELEMENT VideoEditorCap EMPTY>
+<!ATTLIST VideoEditorCap maxInputFrameWidth CDATA #REQUIRED>
+<!ATTLIST VideoEditorCap maxInputFrameHeight CDATA #REQUIRED>
+<!ATTLIST VideoEditorCap maxOutputFrameWidth CDATA #REQUIRED>
+<!ATTLIST VideoEditorCap maxOutputFrameHeight CDATA #REQUIRED>
+<!ATTLIST VideoEditorCap maxPrefetchYUVFrames CDATA #REQUIRED>
+<!ELEMENT ExportVideoProfile EMPTY>
+<!ATTLIST ExportVideoProfile name (h264|h263|m4v) #REQUIRED>
+<!ATTLIST ExportVideoProfile profile CDATA #REQUIRED>
+<!ATTLIST ExportVideoProfile level CDATA #REQUIRED>
 ]>
 <!--
      This file is used to declare the multimedia profiles and capabilities
@@ -105,71 +116,6 @@
              frameRate="30" />
       <Audio codec="aac"
              bitRate="320000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="qvga" fileFormat="mp4" duration="60">
-      <Video codec="h264"
-             bitRate="512000"
-             width="320"
-             height="240"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="wqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="720000"
-             width="432"
-             height="240"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="vga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="640"
-             height="480"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="wvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="800"
-             height="480"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="fwvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="864"
-             height="480"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -279,77 +225,6 @@
              bitRate="12200"
              sampleRate="8000"
              channels="1" />
-    </EncoderProfile>
-
-
-    <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="512000"
-             width="320"
-             height="240"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsewqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="720000"
-             width="432"
-             height="240"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsevga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="640"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsewvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="800"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsefwvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="864"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
@@ -470,71 +345,6 @@
              channels="1" />
     </EncoderProfile>
 
-    <EncoderProfile quality="qvga" fileFormat="mp4" duration="60">
-      <Video codec="h264"
-             bitRate="512000"
-             width="320"
-             height="240"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="wqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="720000"
-             width="432"
-             height="240"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="vga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="640"
-             height="480"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="wvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="800"
-             height="480"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="fwvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="864"
-             height="480"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
     <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
@@ -601,76 +411,6 @@
              bitRate="12200"
              sampleRate="8000"
              channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="512000"
-             width="320"
-             height="240"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsewqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="720000"
-             width="432"
-             height="240"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsevga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="640"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsewvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="800"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsefwvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="864"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="156000"
-             sampleRate="48000"
-             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
@@ -794,4 +534,24 @@
     <VideoEditorCap  maxInputFrameWidth="1920"
         maxInputFrameHeight="1088" maxOutputFrameWidth="1920"
         maxOutputFrameHeight="1088" maxPrefetchYUVFrames="10"/>
+    <!--
+        The VideoEditor Export codec profile and level values
+        correspond to the values in OMX_Video.h.
+        E.g. for h264, profile value 1 means OMX_VIDEO_AVCProfileBaseline
+        and  level 4096 means OMX_VIDEO_AVCLevel41.
+        Please note that the values are in decimal.
+        These values are for video encoder.
+    -->
+    <!--
+      Codec = h.264, Baseline profile, level 4.0
+    -->
+    <ExportVideoProfile name="h264" profile= "1" level="2048"/>
+    <!--
+      Codec = h.263, Baseline profile, level 70
+    -->
+    <ExportVideoProfile name="h263" profile= "1" level="128"/>
+    <!--
+      Codec = mpeg4, Simple profile, level 5
+    -->
+    <ExportVideoProfile name="m4v" profile= "1" level="128"/>
 </MediaSettings>

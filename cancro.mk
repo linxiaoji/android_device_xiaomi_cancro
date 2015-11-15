@@ -211,7 +211,6 @@ PRODUCT_PACKAGES += \
     libOmxVdecHevc \
     libOmxVenc \
     libOmxVidcCommon \
-    libqcmediaplayer \
     libstagefrighthw \
     qcmediaplayer
 
@@ -300,8 +299,8 @@ PRODUCT_PACKAGES += \
     keystore.msm8974
 
 # FM Radio
-PRODUCT_PACKAGES += \
-    qcom.fmradio
+#PRODUCT_PACKAGES += \
+#    qcom.fmradio
 
 PRODUCT_PROPERTY_OVERRIDES += \
     hw.fm.internal_antenna=true
@@ -361,7 +360,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     persist.sys.media.use-awesome=true \
-    debug.mdpcomp.4k2kSplit=1
+    debug.mdpcomp.4k2kSplit=1 \
+    persist.fuse_sdcard=true
 
 # Zip
 PRODUCT_PACKAGES += \
