@@ -59,22 +59,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.services.location \
-    ro.gps.agps_provider=1 \
-    ro.qc.sdk.izat.premium_enabled=1 \
-    ro.qc.sdk.izat.service_mask=0x5
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3=""
+    persist.gps.qc_nlp_in_use=0 \
+    ro.gps.agps_provider=1
 
 # Camera
 PRODUCT_PACKAGES += \
