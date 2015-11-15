@@ -318,6 +318,10 @@ PRODUCT_PACKAGES += \
     libnl_2 \
     libbson
 
+# BoringSSL compatibility wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \

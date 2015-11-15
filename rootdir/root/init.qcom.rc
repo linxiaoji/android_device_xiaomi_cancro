@@ -35,6 +35,7 @@ on property:init.svc.bootanim=running
     setprop sys.perf.profile 2
 
 on init
+    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     # Set permissions for firmware
