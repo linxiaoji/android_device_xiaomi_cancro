@@ -34,11 +34,15 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := MI Cancro
 
+TARGET_VENDOR := xiaomi
+TARGET_VENDOR_PRODUCT_NAME := cancro
+TARGET_VENDOR_DEVICE_NAME := MI
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Device prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="cancro" \
     PRODUCT_NAME="cancro" \
-    BUILD_FINGERPRINT="Xiaomi/cancro/cancro:5.1.1/LMY48M/5.9.17:userdebug/test-keys" \
-    PRIVATE_BUILD_DESC="cancro-userdebug 5.1.1 LMY48M 5.9.17 test-keys"
+    BUILD_FINGERPRINT="Xiaomi/cancro/cancro:6.0/MDA89D/5.11.15:userdebug/test-keys" \
+    PRIVATE_BUILD_DESC="cancro-userdebug 6.0 MDA89D 5.11.15 test-keys"
